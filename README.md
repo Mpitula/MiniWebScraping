@@ -1,1 +1,1 @@
-# MiniWebScraping
+# Web Scraping Project
