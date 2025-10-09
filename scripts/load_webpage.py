@@ -2,6 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import re
+import matplotlib.pyplot as plt
+import os
+
+os.makedirs("data", exist_ok=True)
+os.makedirs("charts", exist_ok=True)
 
 # URL of the first page
 url = "http://books.toscrape.com/catalogue/page-1.html"
@@ -60,3 +65,22 @@ rating_map = {"One": 1, "Two": 2, "Three": 3, "Four": 4, "Five": 5}
 df['rating'] = df['rating'].map(rating_map)
 
 print(df.head())
+
+df.to_csv("data/books_data.csv", index=False)
+
+# Average price per rating
+avg_price = df.groupby('rating')['price'].mean()
+avg_price.plot(kind='bar', title='Average Price per Rating')
+plt.xlabel('Rating')
+plt.ylabel('Average Price (£)')
+plt.savefig("charts/avg_price_per_rating.png")
+plt.show()
+
+
+# Histogram of prices
+plt.hist(df['price'], bins=10, color='skyblue', edgecolor='black')
+plt.title('Distribution of Book Prices')
+plt.xlabel('Price (£)')
+plt.ylabel('Number of Books')
+plt.savefig("charts/price_distribution.png")
+plt.show()
