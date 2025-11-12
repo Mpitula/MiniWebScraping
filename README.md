@@ -1,5 +1,5 @@
-🕸️ Web Scraping Project
-📘 Overview
+## 🕸️ Web Scraping Project
+# 📘 Overview
 
 This project is a Python-based web scraper designed to extract key product information such as:
 
@@ -13,7 +13,7 @@ This project is a Python-based web scraper designed to extract key product infor
 
 It can be used to gather data from e-commerce websites for analysis, price comparison, or machine learning model training.
 
-🧰 Tech Stack
+# 🧰 Tech Stack
 
 Python 3.8+
 
@@ -25,7 +25,7 @@ beautifulsoup4 – for parsing and extracting HTML data
 
 (Optional) pandas – for saving results to CSV or Excel
 
-⚙️ Installation
+# ⚙️ Installation
 
 Clone the repository
 
@@ -43,7 +43,7 @@ Install dependencies
 
 pip install -r requirements.txt
 
-📄 Example Script
+# 📄 Example Script
 import requests
 from bs4 import BeautifulSoup
 
@@ -74,7 +74,7 @@ for item in soup.find_all("div", {"data-component-type": "s-search-result"}):
 for p in products:
     print(p)
 
-📦 Output Example
+# 📦 Output Example
 [
   {
     "Title": "Acer Aspire 5 Laptop",
@@ -90,7 +90,7 @@ for p in products:
   }
 ]
 
-💾 Exporting Data (Optional)
+# 💾 Exporting Data (Optional)
 
 You can easily save the scraped data to a CSV file:
 
@@ -98,13 +98,13 @@ import pandas as pd
 df = pd.DataFrame(products)
 df.to_csv("products.csv", index=False)
 
-⚠️ Disclaimer
+ # ⚠️ Disclaimer
 
 This project is for educational purposes only.
 Always check a website’s robots.txt file and terms of service before scraping.
 Avoid scraping sites that prohibit automated access or may block your IP.
 
-🧑‍💻 Author
+# 🧑‍💻 Author
 
 Alone Mpitula
 📧 Alonemapitlula@gmail.com
